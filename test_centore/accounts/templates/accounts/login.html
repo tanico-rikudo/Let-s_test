@@ -1,9 +1,12 @@
 <form method="post" action="{% url 'accounts:login' %}">
-    {% csrf_token %}
-    {{ form.non_field_errors }}
-    {{ form.errors.username }}
-    {{ form.username }}
-    {{ form.errors.password }}
-    {{ form.password }}
-    <input type="submit" value="Login">
+<table class="table table-striped table-bordered">
+	<tr><td></td><td>{% csrf_token %}</td></tr>
+	<tr><td></td><td>{{ form.non_field_errors }}</td></tr>
+	<tr><td></td><td>{{ form.errors.username }}</td></tr>
+	<tr><td>{{ form.username.label_tag }}</td><td>{{ form.username }}</td></tr>
+	<tr><td></td><td>{{ form.errors.password }}</td></tr>
+	<tr><td>{{ form.password.label_tag }}</td><td>{{ form.password }}</td></tr>
+	<tr><td colspan="2"><input type="submit" value="Login"></td></tr>
+	<input type='hidden' name='next' value='{{ next }}' />
+</table>
 </form>

@@ -141,8 +141,8 @@ STATIC_URL = '/static/'
 
 #ログイン用
 LOGIN_URL='/accounts/login'
-LOGIN_REDIRECT_URL='/accounts/'
-LOGOUT_REDIRECT_URL='/accounts/login'
+LOGIN_REDIRECT_URL = 'app:redilect'
+LOGIN_REDIRECT_URL = 'app:redilect'#
 
 
 

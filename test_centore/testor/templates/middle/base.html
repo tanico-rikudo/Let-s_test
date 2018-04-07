@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<title>{% block title %}評価中{% endblock %}</title>
+		<!-- Bootstrap -->
+	</head>
+	<body>
+		<iframe src= "{{middles.url}}" class ='max_region'></iframe>
+			{% block content %}
+				{{ content }}
+			{% endblock %}
+	</body>
+</html>
+<style>
+	.max_region{
+		position: fixed;
+		top:80px;
+		width: 100%  !important;
+		height: 100%  !important;
+	}
+</style>

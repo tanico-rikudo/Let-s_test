@@ -1,0 +1,36 @@
+{% extends "middle/base.html" %}
+
+{% block title %}
+評価中
+{% endblock title %}
+
+{% block content %}
+<div class = 'judge'>
+<form action="http://localhost:8000/testor/middle" method="post">
+{% csrf_token %}
+<input type="hidden" name="user_id" value={{ middles.user_id }} >
+<input type="hidden" name="test" value={{ middles.test }} >
+<input type="hidden" name="q_no" value={{ middles.q_no }} >
+<input type="hidden" name="url" value={{ middles.url }} >
+
+<p>
+評価<select name="grade" required="required">
+<option value="A">A</option>
+<option value="B">B</option>
+<option value="C">C</option>
+<option value="F">F</option>
+</select>
+</p>
+<input type="submit" value="送信">
+</form>
+</div>
+<style>
+	.judge{
+		width: 100%  !important;
+		position: fixed; !important;
+		top:0px;
+		height:80px;
+
+	}
+</style>
+{% endblock content %}
