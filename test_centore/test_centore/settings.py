@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts.apps.AccountsConfig',
     'testor'
 ]
 
@@ -137,6 +138,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#ログイン用
+LOGIN_URL='/accounts/login'
+LOGIN_REDIRECT_URL='/accounts/'
+LOGOUT_REDIRECT_URL='/accounts/login'
 
 
 

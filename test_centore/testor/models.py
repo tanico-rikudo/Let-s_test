@@ -27,7 +27,7 @@ class Test(models.Model):
 	created_at  = models.DateTimeField('登録日',auto_now_add=True)
 	updated_at  = models.DateTimeField('変更日',auto_now=True)
 	name = models.CharField('テスト', max_length=255)
-
+	method = models.IntegerField('試験方式コード', blank=True, default=0)
 
 	def __str__(self):
 		return self.name
@@ -37,6 +37,7 @@ class Result(models.Model):
 	updated_at  = models.DateTimeField('変更日',auto_now=True)
 	username    = models.ForeignKey(Member,verbose_name = 'ユーザ')
 	testname    = models.ForeignKey(Test,verbose_name = 'テスト')
+	result_code = models.IntegerField('結果コード', blank=True, default=0)
 
 	# def __str__(self):
 	# 	return self.name
